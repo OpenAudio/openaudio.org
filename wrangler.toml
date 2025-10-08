@@ -1,0 +1,4 @@
+[pages]
+project_name = "oap-website"
+build_output_dir = "dist"
+
