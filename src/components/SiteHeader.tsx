@@ -191,6 +191,7 @@ export default function SiteHeader() {
             <div className="label">Yellowpaper</div>
             <div className="sublabel">Coming soon</div>
           </NavItemDisabled>
+          <a href="https://staking.openaudio.org" target="_blank" rel="noreferrer">Staking</a>
           <a href="https://github.com/OpenAudio" target="_blank" rel="noreferrer">Github</a>
           <XLink href="https://x.com/OpenAudioProto" target="_blank" rel="noreferrer">
             <XIcon />
@@ -206,6 +207,7 @@ export default function SiteHeader() {
           <div className="label">Yellowpaper</div>
           <div className="sublabel">Coming soon</div>
         </MobileMenuDisabled>
+        <a href="https://staking.openaudio.org" target="_blank" rel="noreferrer">Staking</a>
         <a href="https://github.com/OpenAudio" target="_blank" rel="noreferrer">Github</a>
         <a href="https://x.com/OpenAudioProto" target="_blank" rel="noreferrer">X</a>
       </MobileMenu>
