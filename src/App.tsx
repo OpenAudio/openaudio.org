@@ -148,6 +148,9 @@ const VibecodeButton = styled.a`
 const VibecodeSection = styled.section`
   border-top: 1px solid rgba(0, 0, 0, 0.08);
   scroll-margin-top: 120px;
+  @media (max-width: 768px) {
+    scroll-margin-top: 100px;
+  }
 `;
 
 const VibecodeContainer = styled.div`
@@ -159,9 +162,12 @@ const VibecodeContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 24px;
+  width: 100%;
+  box-sizing: border-box;
   @media (max-width: 768px) {
-    padding: 64px 16px;
+    padding: 48px 20px 64px;
     gap: 20px;
+    max-width: 100%;
   }
 `;
 
@@ -195,10 +201,14 @@ const VibecodeCodeWrap = styled.div`
   background: rgba(0, 0, 0, 0.04);
   pointer-events: auto;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  box-sizing: border-box;
+  @media (max-width: 768px) {
+    padding: 16px 44px 16px 16px;
+  }
 `;
 
 const AgentPromptCode = styled.span`
-  user-select: all;
+  user-select: text;
   display: block;
   font-family: "new-science", ui-monospace, monospace;
   font-size: clamp(16px, 2vw, 22px);
@@ -208,6 +218,10 @@ const AgentPromptCode = styled.span`
   white-space: pre-wrap;
   word-wrap: break-word;
   text-align: center;
+  &::selection {
+    background: #000000;
+    color: #ffffff;
+  }
 `;
 
 const CopyToast = styled.div<{ $visible: boolean }>`
@@ -257,6 +271,7 @@ const BelowFold = styled.main`
   position: relative;
   background: #ffffff;
   color: #000000;
+  overflow-x: hidden;
 `;
 
 const Container = styled.div`
@@ -264,7 +279,7 @@ const Container = styled.div`
   margin: 0 auto;
   padding: 96px 48px;
   @media (max-width: 768px) {
-    padding: 64px 16px;
+    padding: 64px 20px;
   }
 `;
 
@@ -322,10 +337,14 @@ const AboutSection = styled.section`
 
 const AboutText = styled.div`
   max-width: 680px;
+  width: 100%;
   font-family: "new-science", sans-serif;
   font-size: 18px;
   line-height: 1.6;
   opacity: 0.9;
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
   p {
     margin: 0 0 16px 0;
     &:last-child {

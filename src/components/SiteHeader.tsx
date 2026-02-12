@@ -19,7 +19,7 @@ const Header = styled.header`
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
   @media (max-width: 768px) {
-    padding: 0 16px;
+    padding: 0 20px;
   }
 `;
 
