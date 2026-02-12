@@ -39,7 +39,7 @@ const GradientEdge = styled.div<{ left?: boolean }>`
   );
   ${p => (p.left ? 'left: 0;' : 'right: 0;')}
   @media (max-width: 768px) {
-    width: 16px;
+    width: 8px;
     height: 60px;
   }
 `

@@ -71,33 +71,6 @@ const FooterLinks = styled.div`
   a:hover { opacity: 0.7; }
 `
 
-const FooterLinkDisabled = styled.div`
-  position: relative;
-  display: inline-block;
-  color: #ffffff;
-  user-select: none;
-  padding-bottom: 12px;
-  .label {
-    font-family: "new-science", sans-serif;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .sublabel {
-    position: absolute;
-    left: 0;
-    top: calc(100% - 12px);
-    font-family: "new-science", sans-serif;
-    text-transform: uppercase;
-    font-size: 8px;
-    font-weight: 800;
-    letter-spacing: 0.1em;
-    line-height: 1;
-    color: #D767E1;
-    pointer-events: none;
-    white-space: nowrap;
-  }
-`
-
 export default function SiteFooter() {
   return (
     <Footer>
@@ -115,17 +88,12 @@ export default function SiteFooter() {
             <FooterLinks>
               <a href="https://docs.openaudio.org">Docs</a>
               <a href="/security">Security</a>
-              <FooterLinkDisabled aria-label="Yellowpaper coming soon">
-                <div className="label">Yellowpaper</div>
-                <div className="sublabel">Coming soon</div>
-              </FooterLinkDisabled>
             </FooterLinks>
           </FooterCol>
           <FooterCol>
             <FooterHeading>Community</FooterHeading>
             <FooterLinks>
               <a href="https://docs.openaudio.org/blog">Blog</a>
-              <a href="https://x.com/OpenAudioProto" target="_blank" rel="noreferrer">X</a>
               <a href="https://github.com/OpenAudio" target="_blank" rel="noreferrer">Github</a>
               <a href="https://explorer.openaudio.org">Explorer</a>
             </FooterLinks>

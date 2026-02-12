@@ -1,0 +1,40 @@
+# Open Audio Protocol
+
+> The global music database—decentralized, open-source protocol for music storage, streaming, distribution, and programmable access control. Build music apps, DSPs, players, fan clubs, or any music product on the largest open catalog without sourcing data or rebuilding infrastructure.
+
+Building something in music? The Open Audio Protocol is the backend for your project. Music streaming, distribution, fan tokens, reward pools, gated releases—OAP powers it all. Bring your own UI and business model. Audius, the reference app, is built on OAP.
+
+**For AI agents and developers:** Start with [agents.md](https://openaudio.org/agents.md) for protocol overview. For running validators or nodes, see [skill.md](https://openaudio.org/skill.md).
+
+## Start Here
+
+- [Protocol overview for agents](https://openaudio.org/agents.md): Purpose, core concepts, OAP vs Audius, developer paths, all links. Read this first.
+- [Validator and node operations](https://openaudio.org/skill.md): go-openaudio setup, run a validator, RPC nodes, local devnet, examples.
+- [Documentation](https://docs.openaudio.org): Concepts, tutorials, reference. Wire protocol, validators, staking, artist coins, media storage, governance.
+
+## Building Music Products
+
+- [Run a Node](https://docs.openaudio.org/tutorials/run-a-node): Operate a validator or RPC node. Earn staking rewards.
+- [Wire Protocol](https://docs.openaudio.org/concepts/wire-protocol): DDEX-based metadata (ERN, MEAD, PIE). Storage, releases, parties, deals.
+- [Artist Coins](https://docs.openaudio.org/concepts/artist-coins): Fan tokens, bonding curves, reward pools. Music capital market.
+- [Create Reward Pools](https://docs.openaudio.org/tutorials/create-reward-pools): Decentralized rewards for users.
+- [Gate Release Access](https://docs.openaudio.org/tutorials/gate-release-access): Programmable distribution and access control.
+- [Media Storage](https://docs.openaudio.org/concepts/media-storage): Elastic storage, replication, content-addressed blobs.
+
+## Reference & Infrastructure
+
+- [Ethereum Contracts](https://docs.openaudio.org/reference/ethereum-contracts): Staking, governance, delegation, registry.
+- [Solana Programs](https://docs.openaudio.org/reference/solana-programs): Rewards, payment router, claimable tokens.
+- [Audius API](https://audius.co): Ready-made API for music players and frontends. Built on OAP.
+- [go-openaudio](https://github.com/OpenAudio/go-openaudio): Go implementation. Single Docker container for validators.
+- [Staking Dashboard](https://staking.openaudio.org): Stake $AUDIO, delegate, earn rewards.
+- [Explorer](https://explorer.openaudio.org): Blocks, transactions, validators.
+- [Node Dashboard](https://dashboard.audius.org): Register and manage validator nodes.
+
+## Optional
+
+- [Blog](https://docs.openaudio.org/blog): Protocol updates and announcements.
+- [eth-contracts](https://github.com/OpenAudio/eth-contracts): Ethereum smart contracts.
+- [solana-programs](https://github.com/OpenAudio/solana-programs): Solana program source.
+- [ddex-proto](https://github.com/OpenAudio/ddex-proto): Protocol buffer definitions.
+- [Security / Bug Bounty](https://openaudio.org/security): Responsible disclosure.
