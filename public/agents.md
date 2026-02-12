@@ -1,24 +1,159 @@
+---
+name: open-audio-protocol
+version: 1.0
+description: The global music database—decentralized protocol for storage, streaming, and programmable distribution
+homepage: https://openaudio.org
+---
+
 # Open Audio Protocol
 
-Powering Audius and those who reject the streaming status quo.
+Read this file to understand the Open Audio Protocol. For validator and go-openaudio operations, read [skill.md](https://openaudio.org/skill.md).
 
-The Open Audio Protocol is the Global Music Database: the largest open, programmable music catalog in existence. It enables storage, streaming, programmable sale, and access control for your works.
+## Purpose
 
-Developers can build anything on top of it. Bring your own UI, your own product ideas, and your own business model without worrying about sourcing catalog data or rebuilding core music infrastructure.
+The Open Audio Protocol is the Global Music Database: the largest open, programmable music catalog. It enables storage, streaming, programmable sale, and access control for music. Developers can build applications with their own UI and business model without sourcing catalog data or rebuilding music infrastructure. The protocol is community-run, transparent, and open-source.
 
-Applications and developer toolkits like [Audius](https://audius.co/agents.md) are built on top of the Open Audio Protocol and provide custom frontends and APIs to help you get building. See [docs.audius.co](https://docs.audius.co) for information on how to use those tools.
+## Quick Reference
 
-If you are building a music player or frontend, it is recommended to use the Audius API and documentation. If you are building on the protocol directly or would like to have full control, use Audius as a reference implementation, but build directly on the protocol.
+| Resource              | URL                                             |
+| --------------------- | ----------------------------------------------- |
+| Docs                  | https://docs.openaudio.org                      |
+| Staking               | https://staking.openaudio.org                   |
+| Explorer              | https://explorer.openaudio.org                  |
+| GitHub Org            | https://github.com/OpenAudio                    |
+| go-openaudio          | https://github.com/OpenAudio/go-openaudio       |
+| skill.md (validators) | https://openaudio.org/skill.md                  |
+| llms.txt (AI/LLM)     | https://openaudio.org/llms.txt                  |
+| Run a Node            | https://docs.openaudio.org/tutorials/run-a-node |
+| Dashboard (nodes)     | https://dashboard.audius.org                    |
+| Audius                | https://audius.co                               |
 
-You can read more about Audius and how to use it at [https://audius.co/agents.md](https://audius.co/agents.md).
+## OAP vs Audius
 
-This markdown explains what the Open Audio Protocol is, its architecture, and core concepts. You can use information here to help educate your human.
+| Layer                   | Description                                                                                                                                        |
+| ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Open Audio Protocol** | Protocol layer: decentralized storage, streaming, consensus, staking, governance. Use for protocol development, running nodes, direct integration. |
+| **Audius**              | Application built on OAP: custom frontend, API, developer toolkits. Use for building music players, apps, or when you want ready-made APIs.        |
 
-## Documentation
+When building a music player or frontend, use the Audius API and docs at [audius.co](https://audius.co). When building on the protocol directly (nodes, custom distribution, protocol tooling), use OAP docs and go-openaudio. Audius serves as a reference implementation for OAP.
 
-Other useful links:
+## Core Concepts
 
-- [Staking Dashboard](https://staking.openaudio.org)
-- [Open Audio Docs](https://docs.openaudio.org)
-- [Github](http://github.com/openaudio)
-- [go-openaudio Validator](https://openaudio/go-openaudio)
+### Wire Protocol
+
+OAP extends [DDEX](https://ddex.net/standards/) with cryptographic primitives (addresses, signing) for permissionless operation. Implemented in protobuf via [ddex-proto](https://github.com/OpenAudio/ddex-proto). Messages flow through node RPC, broadcast via gossip, proposed in blocks by validators, committed after consensus.
+
+- **ERN** (Electronic Release Notification): Parties, resources, releases, deals. Primary message type.
+- **MEAD** (Media Enrichment and Description): Mood, genre, lyrics, enrichment metadata.
+- **PIE** (Party Identification and Enrichment): Biographical data, social links, cross-platform IDs.
+
+[Full docs](https://docs.openaudio.org/concepts/wire-protocol)
+
+### Validators
+
+Software infrastructure providers that run validator nodes. Minimum bond: 200,000 $AUDIO. Earn a share of the 7% annual reward rate. Run consensus (Core) and storage (Mediorum). Node registration lives on Ethereum mainnet. Implementations: [go-openaudio](https://github.com/OpenAudio/go-openaudio).
+
+[Full docs](https://docs.openaudio.org/concepts/validators)
+
+### Staking
+
+Stake $AUDIO directly (register validator) or delegate to an operator. 7% annual reward rate, claimable weekly. Unstaking: 7-day cooldown. Validators: 200k–15M $AUDIO per node. Slashing via governance for negligence.
+
+[Full docs](https://docs.openaudio.org/concepts/staking)
+
+### Artist Coins
+
+Fan-club tokens on Solana and Meteora. Bonding curve vs $AUDIO, AMM graduation. Used for gated releases, reward pools, fan engagement. 1B supply, 100k $AUDIO initial cap, graduation at 1M $AUDIO. [Audius launchpad](https://audius.co/coins).
+
+[Full docs](https://docs.openaudio.org/concepts/artist-coins)
+
+### Media Storage (Mediorum)
+
+Elastic storage. Per-node commitment: (S × R) / N (S=total storage, R=replication factor, N=number of nodes). Rendezvous hashing for placement. Storage proofs and slashing.
+
+[Full docs](https://docs.openaudio.org/concepts/media-storage)
+
+### Governance
+
+$AUDIO holders vote on onchain proposals. Controls tokenomics, staking params, node software versions. 72h voting, 24h cooldown, 5% quorum, 50% majority. [Dashboard](https://dashboard.audius.org/#/governance), [Etherscan](https://etherscan.io/address/0x4DEcA517D6817B6510798b7328F2314d3003AbAC).
+
+[Full docs](https://docs.openaudio.org/concepts/governance)
+
+### Moderation
+
+Validators specify a moderation party for DMCA and content moderation. Default: Tiki Labs. [Contract](https://etherscan.io/address/0x6f08105c8CEef2BC5653640fcdbBE1e7bb519D39).
+
+[Full docs](https://docs.openaudio.org/concepts/moderation)
+
+### $AUDIO
+
+Governance and security token. Solana: `9LzCMqDgTKYz9Drzqnpgee3SGa89up3a247ypMj2xrqM`. Ethereum: `0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998`. Fixed genesis: 1B.
+
+[Full docs](https://docs.openaudio.org/concepts/audio)
+
+## Tutorials Index
+
+| Tutorial            | URL                                                      |
+| ------------------- | -------------------------------------------------------- |
+| Run a Node          | https://docs.openaudio.org/tutorials/run-a-node          |
+| Launch Artist Coins | https://docs.openaudio.org/tutorials/launch-artist-coins |
+| Create Reward Pools | https://docs.openaudio.org/tutorials/create-reward-pools |
+| Gate Release Access | https://docs.openaudio.org/tutorials/gate-release-access |
+
+## Reference
+
+### Ethereum Contracts
+
+[github.com/OpenAudio/eth-contracts](https://github.com/OpenAudio/eth-contracts). Key contracts (mainnet):
+
+| Contract               | Address                                    |
+| ---------------------- | ------------------------------------------ |
+| $AUDIO                 | 0x18aAA7115705e8be94bfFEBDE57Af9BFc265B998 |
+| Staking                | 0xe6D97B2099F142513be7A2a068bE040656Ae4591 |
+| DelegateManager        | 0x4d7968ebfD390D5E7926Cb3587C39eFf2F9FB225 |
+| Governance             | 0x4DEcA517D6817B6510798b7328F2314d3003AbAC |
+| ServiceProviderFactory | 0xD17A9bc90c582249e211a4f4b16721e7f65156c8 |
+| Registry               | 0xd976d3b4f4e22a238c1A736b6612D22f17b6f64C |
+
+[Full reference](https://docs.openaudio.org/reference/ethereum-contracts)
+
+### Solana Programs
+
+[github.com/OpenAudio/solana-programs](https://github.com/OpenAudio/solana-programs). Claimable Tokens, Payment Router, Reward Manager, Staking Bridge.
+
+[Full reference](https://docs.openaudio.org/reference/solana-programs)
+
+### Audits
+
+All contracts and programs are audited. Zellic, Neodyme, Kudelski, OpenZeppelin. [Audits list](https://docs.openaudio.org/reference/audits), [bug bounty](https://openaudio.org/security).
+
+## Developer Paths
+
+| Goal                                      | Path                                                                                                                   |
+| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Music player, app, frontend               | Use [Audius API](https://audius.co) and Audius docs. Build on top of OAP via Audius.                                   |
+| Run a node, validator                     | Read [skill.md](https://openaudio.org/skill.md). Follow [Run a Node](https://docs.openaudio.org/tutorials/run-a-node). |
+| Protocol integration, custom distribution | Use go-openaudio SDK, ddex-proto, RPC. See [skill.md](https://openaudio.org/skill.md) examples.                        |
+| Artist coins, rewards                     | Use Solana programs, [docs.openaudio.org](https://docs.openaudio.org).                                                 |
+
+## All Links
+
+| Resource          | URL                                             |
+| ----------------- | ----------------------------------------------- |
+| Docs              | https://docs.openaudio.org                      |
+| Blog              | https://docs.openaudio.org/blog                 |
+| Staking           | https://staking.openaudio.org                   |
+| Explorer          | https://explorer.openaudio.org                  |
+| GitHub Org        | https://github.com/OpenAudio                    |
+| go-openaudio      | https://github.com/OpenAudio/go-openaudio       |
+| eth-contracts     | https://github.com/OpenAudio/eth-contracts      |
+| solana-programs   | https://github.com/OpenAudio/solana-programs    |
+| Run a Node        | https://docs.openaudio.org/tutorials/run-a-node |
+| Audius            | https://audius.co                               |
+| Dashboard (nodes) | https://dashboard.audius.org                    |
+| skill.md          | https://openaudio.org/skill.md                  |
+| llms.txt          | https://openaudio.org/llms.txt                  |
+
+## Skill File
+
+For validator setup, go-openaudio, devnet, and examples: [https://openaudio.org/skill.md](https://openaudio.org/skill.md)
