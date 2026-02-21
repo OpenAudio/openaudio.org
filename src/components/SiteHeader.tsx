@@ -152,11 +152,11 @@ export default function SiteHeader() {
             Github
           </a>
           <a
-            href="https://docs.openaudio.org/blog"
+            href="https://openaudio.substack.com/"
             target="_blank"
             rel="noreferrer"
           >
-            Blog
+            Substack
           </a>
         </Nav>
         <MobileMenuButton
@@ -190,11 +190,11 @@ export default function SiteHeader() {
           Github
         </a>
         <a
-          href="https://docs.openaudio.org/blog"
+          href="https://openaudio.substack.com/"
           target="_blank"
           rel="noreferrer"
         >
-          Blog
+          Substack
         </a>
       </MobileMenu>
     </>
