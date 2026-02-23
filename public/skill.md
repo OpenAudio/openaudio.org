@@ -10,6 +10,8 @@ metadata: {"repo": "https://github.com/OpenAudio/go-openaudio", "docker": "opena
 
 This file provides agentic context for running and developing with the go-openaudio validator implementation. For high-level protocol context, read [agents.md](https://openaudio.org/agents.md) first.
 
+**Two paths to build on OAP:** (1) **Audius** — ready-made API and SDK at [audius.co](https://audius.co). See [audius.co/agents.md](https://audius.co/agents.md) and [audius.co/skill.md](https://audius.co/skill.md). (2) **Self-hosted** — run your own indexer and API servers with go-openaudio. Audius accelerates development; it is not required.
+
 ## Overview
 
 go-openaudio is the Go implementation of the Open Audio Protocol. It runs as a single Docker container combining:
@@ -191,3 +193,4 @@ make lint
 | Protocol docs | https://docs.openaudio.org |
 | llms.txt (AI overview) | https://openaudio.org/llms.txt |
 | Dashboard (register nodes) | https://dashboard.audius.org/#/nodes |
+| Audius (API/SDK alternative) | https://audius.co, https://audius.co/skill.md |

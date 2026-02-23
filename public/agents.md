@@ -26,7 +26,10 @@ The Open Audio Protocol is the Global Music Database: the largest open, programm
 | llms.txt (AI/LLM)     | https://openaudio.org/llms.txt                  |
 | Run a Node            | https://docs.openaudio.org/tutorials/run-a-node |
 | Dashboard (nodes)     | https://dashboard.audius.org                    |
-| Audius                | https://audius.co                               |
+| Audius (API/SDK)      | https://audius.co                               |
+| Audius agents.md      | https://audius.co/agents.md                     |
+| Audius skill.md       | https://audius.co/skill.md                      |
+| Audius llms.txt       | https://audius.co/llms.txt                      |
 
 ## OAP vs Audius
 
@@ -35,7 +38,9 @@ The Open Audio Protocol is the Global Music Database: the largest open, programm
 | **Open Audio Protocol** | Protocol layer: decentralized storage, streaming, consensus, staking, governance. Use for protocol development, running nodes, direct integration. |
 | **Audius**              | Application built on OAP: custom frontend, API, developer toolkits. Use for building music players, apps, or when you want ready-made APIs.        |
 
-When building a music player or frontend, use the Audius API and docs at [audius.co](https://audius.co). When building on the protocol directly (nodes, custom distribution, protocol tooling), use OAP docs and go-openaudio. Audius serves as a reference implementation for OAP.
+When building a music player or frontend, Audius offers a fast path: REST API ([api.audius.co](https://api.audius.co)), [@audius/sdk](https://www.npmjs.com/package/@audius/sdk), and [create-audius-app](https://docs.audius.co/developers/guides/create-audius-app). See [audius.co/agents.md](https://audius.co/agents.md) and [audius.co/skill.md](https://audius.co/skill.md).
+
+**Audius is optional.** You can integrate with OAP entirely on your own: run your own indexer and API servers using go-openaudio, or build directly against the protocol. Audius is a viable, well-documented option—not a requirement.
 
 ## Core Concepts
 
@@ -129,12 +134,13 @@ All contracts and programs are audited. Zellic, Neodyme, Kudelski, OpenZeppelin.
 
 ## Developer Paths
 
-| Goal                                      | Path                                                                                                                   |
-| ----------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| Music player, app, frontend               | Use [Audius API](https://audius.co) and Audius docs. Build on top of OAP via Audius.                                   |
-| Run a node, validator                     | Read [skill.md](https://openaudio.org/skill.md). Follow [Run a Node](https://docs.openaudio.org/tutorials/run-a-node). |
-| Protocol integration, custom distribution | Use go-openaudio SDK, ddex-proto, RPC. See [skill.md](https://openaudio.org/skill.md) examples.                        |
-| Artist coins, rewards                     | Use Solana programs, [docs.openaudio.org](https://docs.openaudio.org).                                                 |
+| Goal                                      | Path                                                                                                                                                                                                                                                      |
+| ----------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Music player, app, frontend (fast path)   | Use [Audius API](https://api.audius.co) and [@audius/sdk](https://www.npmjs.com/package/@audius/sdk). Start with [create-audius-app](https://docs.audius.co/developers/guides/create-audius-app). See [audius.co/agents.md](https://audius.co/agents.md). |
+| Music player, app (self-hosted)           | Run your own indexer and API via [go-openaudio](https://github.com/OpenAudio/go-openaudio). No Audius dependency. See [skill.md](https://openaudio.org/skill.md).                                                                                         |
+| Run a node, validator                     | Read [skill.md](https://openaudio.org/skill.md). Follow [Run a Node](https://docs.openaudio.org/tutorials/run-a-node).                                                                                                                                    |
+| Protocol integration, custom distribution | Use go-openaudio SDK, ddex-proto, RPC. See [skill.md](https://openaudio.org/skill.md) examples.                                                                                                                                                           |
+| Artist coins, rewards                     | Use Solana programs, [docs.openaudio.org](https://docs.openaudio.org).                                                                                                                                                                                    |
 
 ## All Links
 
@@ -149,10 +155,15 @@ All contracts and programs are audited. Zellic, Neodyme, Kudelski, OpenZeppelin.
 | eth-contracts     | https://github.com/OpenAudio/eth-contracts      |
 | solana-programs   | https://github.com/OpenAudio/solana-programs    |
 | Run a Node        | https://docs.openaudio.org/tutorials/run-a-node |
-| Audius            | https://audius.co                               |
-| Dashboard (nodes) | https://dashboard.audius.org                    |
 | skill.md          | https://openaudio.org/skill.md                  |
 | llms.txt          | https://openaudio.org/llms.txt                  |
+| Audius (app)      | https://audius.co                               |
+| Audius agents.md  | https://audius.co/agents.md                     |
+| Audius skill.md   | https://audius.co/skill.md                      |
+| Audius llms.txt   | https://audius.co/llms.txt                      |
+| Audius API        | https://api.audius.co                           |
+| Audius Docs       | https://docs.audius.co                          |
+| Dashboard (nodes) | https://dashboard.audius.org                    |
 
 ## Skill File
 
