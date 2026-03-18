@@ -94,6 +94,20 @@ export default function SiteFooter() {
             <FooterLinks>
               <a href="https://docs.openaudio.org">Docs</a>
               <a href="/security">Security</a>
+              <a
+                href="https://openaudiofoundation.org"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Foundation
+              </a>
+              <a
+                href="https://openaudiofoundation.org/open-music-license.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Open Music License
+              </a>
             </FooterLinks>
           </FooterCol>
           <FooterCol>
