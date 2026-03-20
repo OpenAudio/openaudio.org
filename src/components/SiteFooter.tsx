@@ -108,6 +108,13 @@ export default function SiteFooter() {
               >
                 Open Music License
               </a>
+              <a
+                href="https://openaudiofoundation.org/privacy-policy.pdf"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Privacy Policy
+              </a>
             </FooterLinks>
           </FooterCol>
           <FooterCol>
