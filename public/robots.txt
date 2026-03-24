@@ -1,0 +1,7 @@
+# Welcome all crawlers, bots, and AI agents
+User-agent: *
+Allow: /
+
+# LLM & AI agents: see also
+# /llms.txt - structured info about this site
+# /agents.md - agent-friendly documentation
