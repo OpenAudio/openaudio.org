@@ -667,7 +667,7 @@ function App() {
               <FeatureCard
                 onClick={() =>
                   window.open(
-                    "https://docs.openaudio.org/tutorials/programmable-distribution",
+                    "https://docs.openaudio.org/tutorials/gate-release-access",
                     "_blank",
                   )
                 }
