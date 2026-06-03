@@ -114,7 +114,7 @@ const LineBig = styled.h1`
   }
 `;
 
-const AgentPromptText = `Read https://openaudio.org/agents.md and follow the instructions to build on the Open Audio Protocol.`;
+const AgentPromptText = `Read https://openaudio.org/agents.md and follow the instructions to build with the Open Audio Protocol.`;
 
 const VibecodeButton = styled.a`
   margin-top: 12px;
@@ -525,8 +525,8 @@ function App() {
               and those who reject the streaming status quo
             </LineSmall>
           </div>
-          <VibecodeButton href="#vibecode">
-            &lt; Start Vibecoding /&gt;
+          <VibecodeButton href="https://docs.openaudio.org">
+            &lt; Start Building /&gt;
           </VibecodeButton>
         </HeroTextWrap>
       </BlendWrap>
@@ -540,7 +540,7 @@ function App() {
         </PartnersSection>
         <VibecodeSection id="vibecode">
           <VibecodeContainer>
-            <VibecodeHeading>Vibecode Ready</VibecodeHeading>
+            <VibecodeHeading>Agent Ready</VibecodeHeading>
             <VibecodeSubheading>
               Copy and paste this box and send it to your AI Agent
             </VibecodeSubheading>

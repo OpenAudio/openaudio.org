@@ -135,7 +135,7 @@ export default function SiteHeader() {
           </LogoLink>
         </LogoWrap>
         <Nav>
-          <a href="#vibecode">Vibecode</a>
+          <a href="#vibecode">Agents</a>
           <a href="https://docs.openaudio.org">Docs</a>
           <a
             href="https://staking.openaudio.org"
@@ -177,7 +177,7 @@ export default function SiteHeader() {
         $open={menuOpen && !scrolled}
         onClick={() => setMenuOpen(false)}
       >
-        <a href="#vibecode">Vibecode</a>
+        <a href="#vibecode">Agents</a>
         <a href="https://docs.openaudio.org">Docs</a>
         <a
           href="https://staking.openaudio.org"
