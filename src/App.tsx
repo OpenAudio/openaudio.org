@@ -526,7 +526,7 @@ function App() {
             </LineSmall>
           </div>
           <VibecodeButton href="https://docs.openaudio.org">
-            &lt; Start Building /&gt;
+            Start Building
           </VibecodeButton>
         </HeroTextWrap>
       </BlendWrap>
