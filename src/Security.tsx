@@ -41,18 +41,77 @@ const SectionTitle = styled.h2`
   font-size: 20px;
 `
 
-const List = styled.ul`
-  margin: 0;
-  padding-left: 18px;
-  line-height: 1.7;
-  font-size: 15px;
-  opacity: 0.95;
-`
-
 const Mono = styled.code`
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   font-size: 14px;
 `
+
+const RepoList = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 12px;
+`
+
+const RepoItem = styled.li`
+  line-height: 1.5;
+`
+
+const RepoLink = styled.a`
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 15px;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+  &:hover {
+    border-bottom-color: #000000;
+  }
+`
+
+const RepoDesc = styled.span`
+  display: block;
+  font-size: 14px;
+  opacity: 0.7;
+  margin-top: 2px;
+`
+
+type Repo = { name: string; description: string }
+
+const SMART_CONTRACT_REPOS: Repo[] = [
+  { name: 'eth-contracts', description: 'Ethereum smart contracts for the protocol.' },
+  { name: 'solana-programs', description: 'Solana on-chain programs.' },
+]
+
+const PROTOCOL_REPOS: Repo[] = [
+  { name: 'go-openaudio', description: 'Go implementation of the Open Audio Protocol.' },
+  { name: 'staking', description: 'Staking and delegation interface.' },
+  { name: 'docs', description: 'Docs for the Open Audio Protocol.' },
+  { name: 'ddex-proto', description: 'Protobuf definitions of DDEX schemas used by the protocol.' },
+]
+
+function RepoSection({ title, repos }: { title: string; repos: Repo[] }) {
+  return (
+    <Section>
+      <SectionTitle>{title}</SectionTitle>
+      <RepoList>
+        {repos.map((repo) => (
+          <RepoItem key={repo.name}>
+            <RepoLink
+              href={`https://github.com/OpenAudio/${repo.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              OpenAudio/{repo.name}
+            </RepoLink>
+            <RepoDesc>{repo.description}</RepoDesc>
+          </RepoItem>
+        ))}
+      </RepoList>
+    </Section>
+  )
+}
 
 export default function Security() {
   return (
@@ -61,40 +120,13 @@ export default function Security() {
       <Container>
         <Title>Security</Title>
         <Intro>
-          Security is vital to the Open Audio Protocol. We welcome responsible disclosures of
-          vulnerabilities in our code.
+          Please report security issues to <Mono>security@audius.co</Mono> with a description of the
+          vulnerability and any steps to reproduce.
         </Intro>
 
-        <Section>
-          <SectionTitle>Bug Bounty Policy</SectionTitle>
-          <p style={{ margin: 0, opacity: 0.95 }}>
-            We follow responsible disclosure best practices similar to HackerOne / Immunefi.
-          </p>
-        </Section>
+        <RepoSection title="Smart Contracts" repos={SMART_CONTRACT_REPOS} />
 
-        <Section>
-          <SectionTitle>Disclosure Process</SectionTitle>
-          <List>
-            <li>Privately email details and a proof-of-concept to <Mono>security@audius.co</Mono>.</li>
-            <li>We assess severity together using informal CVSS-style guidelines.</li>
-            <li>We coordinate a fix and rollout, then you may disclose publicly.</li>
-            <li>We publish a short write-up of the issue.</li>
-          </List>
-        </Section>
-
-        <Section>
-          <SectionTitle>Bounties</SectionTitle>
-          <List>
-            <li>Smart contracts: Critical — contact our team</li>
-            <li>Smart contracts: High — $20,000+</li>
-            <li>Smart contracts: Medium — $5,000</li>
-            <li>Smart contracts: Low — $0 – $1,000</li>
-            <li>Web apps & APIs: Critical — $5,000</li>
-            <li>Web apps & APIs: High — $2,000</li>
-            <li>Web apps & APIs: Medium — $500</li>
-            <li>Web apps & APIs: Low — $0 – $100</li>
-          </List>
-        </Section>
+        <RepoSection title="Protocol" repos={PROTOCOL_REPOS} />
 
         <Section>
           <SectionTitle>Out of Scope</SectionTitle>
